@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f0df">
+    <title>Happy Birthday Bianca! ♡</title>
+
+    <!-- Optional Google Fonts: the page still works if these cannot load. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Dancing+Script:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --background: #f7f0df;
+            --paper: #fffdf5;
+            --yellow: #e8bd26;
+            --yellow-soft: #f0d98b;
+            --text: #756347;
+            --muted: #a18a61;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at 12% 12%, rgba(240, 217, 139, .24) 0 3px, transparent 4px),
+                radial-gradient(circle at 88% 30%, rgba(240, 217, 139, .2) 0 4px, transparent 5px),
+                var(--background);
+            color: var(--text);
+            font-family: "Quicksand", sans-serif;
+            line-height: 1.7;
+        }
+
+        .hero {
+            min-height: 65vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 22px 55px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .eyebrow {
+            margin: 0 0 8px;
+            color: var(--muted);
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            font-size: .76rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            color: var(--yellow);
+            font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+            font-size: clamp(2.6rem, 8vw, 5.1rem);
+            line-height: 1.08;
+            margin: 0;
+            text-shadow: 0 3px 0 rgba(255, 255, 255, .8);
+        }
+
+        .hero-flower {
+            color: #e4bf49;
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            animation: bob 3s ease-in-out infinite;
+        }
+
+        .subtitle {
+            max-width: 470px;
+            margin: 18px auto 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .scroll-note {
+            margin-top: 32px;
+            font-size: .85rem;
+            color: #a18a61;
+        }
+
+        .scroll-note span { display: block; font-size: 1.3rem; }
+
+        .petal {
+            position: absolute;
+            color: #e8c957;
+            opacity: .65;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .petal.one { left: 9%; top: 23%; font-size: 1.8rem; transform: rotate(-18deg); }
+        .petal.two { right: 10%; top: 29%; font-size: 2.2rem; transform: rotate(15deg); }
+        .petal.three { left: 16%; bottom: 18%; font-size: 1.4rem; }
+        .petal.four { right: 17%; bottom: 15%; font-size: 1.7rem; }
+
+        main {
+            width: min(760px, calc(100% - 28px));
+            margin: 0 auto 60px;
+        }
+
+        .intro-card, .letter-card, .ending-card {
+            background: var(--paper);
+            border: 1px solid var(--yellow-soft);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(130, 103, 50, .07);
+        }
+
+        .intro-card {
+            text-align: center;
+            padding: 28px 22px;
+            margin-bottom: 22px;
+        }
+
+        .small-flower { color: var(--yellow); font-size: 1.8rem; }
+
+        .intro-card p {
+            margin: 6px auto 0;
+            max-width: 520px;
+            color: var(--muted);
+        }
+
+        .letter-card { padding: clamp(22px, 5vw, 48px); }
+
+        .letter-heading {
+            font-family: "Dancing Script", cursive;
+            color: #c9a126;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            text-align: center;
+            font-weight: 600;
+            margin: 0 0 6px;
+        }
+
+        .letter-subheading {
+            text-align: center;
+            color: #b19a70;
+            font-size: .8rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin: 0 0 28px;
+        }
+
+        .letter p {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.04rem;
+            line-height: 1.95;
+            color: #6f6049;
+            text-align: left;
+            margin: 0 0 1.35em;
+            overflow-wrap: anywhere;
+        }
+
+        .letter p:last-child { margin-bottom: 0; }
+
+        .letter em { color: #987a38; }
+
+        .divider {
+            text-align: center;
+            color: #e1c15b;
+            letter-spacing: .5em;
+            margin: 28px 0;
+        }
+
+        .ending-card {
+            margin-top: 22px;
+            padding: 30px 22px;
+            text-align: center;
+        }
+
+        .ending-card .big-heart {
+            color: #dfbd4c;
+            font-size: 2rem;
+        }
+
+        .ending-card p {
+            margin: 6px 0;
+            color: var(--muted);
+        }
+
+        .ending-card .signoff {
+            font-family: "Dancing Script", cursive;
+            color: #c9a126;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        footer {
+            text-align: center;
+            padding: 0 18px 34px;
+            color: #aa956e;
+            font-size: .78rem;
+        }
+
+        @keyframes bob {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50% { transform: translateY(-6px) rotate(3deg); }
+        }
+
+        @media (max-width: 520px) {
+            .hero { min-height: 55vh; padding-top: 55px; }
+            .petal.one { left: 4%; top: 15%; }
+            .petal.two { right: 4%; top: 19%; }
+            .petal.three { left: 7%; bottom: 12%; }
+            .petal.four { right: 7%; bottom: 10%; }
+            .letter p { font-size: 1rem; line-height: 1.85; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero">
+        <span class="petal one" aria-hidden="true">✿</span>
+        <span class="petal two" aria-hidden="true">✿</span>
+        <span class="petal three" aria-hidden="true">✧</span>
+        <span class="petal four" aria-hidden="true">✧</span>
+
+        <div class="hero-flower" aria-hidden="true">✿</div>
+        <p class="eyebrow">16!</p>
+        <h1>Happy birthday<br>Bianca!</h1>
+        <p class="subtitle">For my favourite Garden Gnome. ♡</p>
+        <div class="scroll-note">There's a "little" letter for you below <span aria-hidden="true">↓</span></div>
+    </header>
+
+    <main>
+        <section class="intro-card">
+            <div class="small-flower" aria-hidden="true">✿ ✧ ✿</div>
+            <p>Take your time reading this. It's a little longer than a birthday card, and took forever to do lol.</p>
+        </section>
+
+        <article class="letter-card letter">
+            <h2 class="letter-heading">A letter to Bianca,</h2>
+            <p class="letter-subheading">With love, on your birthday, from Rahma♡</p>
+
+            <p>I've been putting off writing this for a while now, which is rather ironic considering how much I have to say. I think my biggest problem is that there is simply <em>too much</em> I'd like to tell you, and I haven't quite figured out how to fit it all into one card without either writing you an entire novel or somehow managing to leave out half of what I mean to say. Neither option seemed particularly appealing, so I settled on making you a little corner of the internet instead. Because, well, why limit myself to a few pages when I could make you an entire website? Besides, ink fades, paper yellows, and handwriting eventually becomes illegible, but I hope this little page remains somewhere you can return to whenever you need it. And even if you never open it again after today, at least these words will be floating around in the vast, incomprehensible expanse of the internet, immortalised in the ever-expanding abyss that is the metaverse. Which is a rather ridiculous way of saying that I wanted to make you something that would last. Something you could keep. Something that would still be here long after your birthday has passed, because the things I want to tell you aren't things I want confined to a single day.</p>
+
+            <p>So, to begin with, thank you. Thank you for being the incredible friend, young woman, and role model that you are. This year has been one hell of a shitshow, and I don't think either of us could have predicted half of what 2026 would have in store for us. There have been some wonderful moments, some rather questionable ones, and certainly enough chaos to last us a lifetime. But if there is one thing this year has given me that I will always be grateful for, it's definitely you. Befriending you has genuinely been the highlight of my 2026, and the last eight and a half months have been some of the best I've ever had, because of you. I don't think you quite understand how much of a difference one person can make simply by existing in your life, by showing up, by being themselves, and by making the ordinary days feel a little less ordinary. But you've done that for me, Bianca, in more ways than I could possibly begin to explain.</p>
+
+            <p>When I first saw you on February 11th, 257 days ago, you were shy and shaky with fear, and a part of me hoped that we would become friends. There was something about you that drew me in, even then. Perhaps it was your warmth, that inviting energy you carry so naturally, or perhaps it was simply one of those inexplicable feelings you get when you meet someone and, for reasons you cannot yet articulate, find yourself hoping they'll become a part of your life. Whatever it was, I'm glad I listened to that little hope. Because somewhere between that first meeting and now, you've gone from being someone I hoped I might befriend to someone I have the privilege of calling my best friend. And if I could go back to that day, knowing everything I know now, I would make that same wish a thousand times over.</p>
+
+            <div class="divider" aria-hidden="true">✿ ✧ ✿</div>
+
+            <p>But that's not all you are to me. Not even close.</p>
+
+            <p>To me, Bianca is a long nap after a hard day. The smell of rain after a thunderstorm. A helping hand when the world feels a little too heavy to carry alone. The guitar solo in <em>Iris</em> by the Goo Goo Dolls, or the first chorus in <em>Heaven</em> by Bryan Adams, the sort of music that makes you feel something you can't quite put into words. The ache in your abs after laughing so hard that breathing becomes an afterthought. A hand absentmindedly playing with your hair as you drift to sleep. Blasting One Direction on a summer road trip, and feeling as though the world outside the windows could wait just a little longer. You are the little moments that make life feel softer,and happiness that sneaks up on you when you least expect it.</p>
+
+            <p>And, perhaps most importantly, you are a flower that grows through even the hardest of concrete.</p>
+
+            <p>I think that, of all the things I admire about you, your strength and resilience are among the greatest. I know this year hasn't always been kind to you. I know there have been days when simply getting up and trying your best has required more of you than anyone else might realise. And yet, you keep going. You continue to try, to care, to show up for the people around you, even when doing so isn't easy. I don't think I tell you this nearly enough, but I notice. I notice the effort, the determination, and the quiet courage it takes to keep moving forward when things feel difficult. I notice that you continue to be kind in a world that doesn't always make kindness easy, and that you continue to find reasons to laugh even when life gives you plenty of reasons not to. I hope you never mistake the fact that you keep going for something ordinary. There is so much strength in that, Bianca, and I hope you give yourself the credit you deserve for it.</p>
+
+            <p>Something else I deeply admire about you is the way you bring light into the spaces you occupy. Even in the darkest of times, you have this ability to make a room feel warmer simply by being in it.And no, not just because you're hot as hell. You make people laugh, you make them feel welcome, and you have a way of turning moments that might otherwise have been forgettable into memories worth keeping. I don't know if you realise just how much of an impact you have on the people around you, but I hope that one day you will. Because the light you bring into other people's lives is not diminished by the fact that you sometimes struggle to find it in your own. You don't have to be happy all the time to be a source of happiness. You don't have to have everything figured out to be someone others can look up to. And you certainly don't have to be at your strongest every single day to be someone I admire.</p>
+
+            <p>In fact, I sometimes feel as though there is a rather enormous disconnect between the way you see yourself and the way the rest of the world sees you. I may not be able to read your mind, but I think it is a fairly safe assumption that you don't give yourself nearly enough credit. So, if there is one thing I could give you for your birthday, besides this rather lengthy collection of words, it would be the ability to see yourself as you truly are, even if only for a moment.</p>
+
+            <p>Bianca, you are incredible. And I mean that with every ounce of sincerity I possess.</p>
+
+            <p>You have a beauty that I am not entirely sure how to describe, because it seems to exceed the limits of language itself. There are only so many adjectives one can string together before they begin to feel inadequate, and I suspect I could spend the rest of my life trying to find the right words and still come up short. When I look at you, I see something that reminds me why people have spent centuries trying to capture beauty in paintings, poetry, music, and every other form of art imaginable. There is something about you that makes me understand why people write love letters and why poets spend entire lifetimes searching for the perfect metaphor and why men went to war for those they found beautiful. I don't think a single description could ever do you justice, and I don't think that is a failing of language, so much as it is a testament to the sheer amount of beauty there is to describe.</p>
+
+            <p>And I don't mean just the kind of beauty that can be seen in a photograph, either. I mean the entirety of you. The things you notice, the way you laugh, the expressions you make without realising, the way your face lights up when you're excited about something, and all the little things you might consider insignificant but that make you unmistakably, wonderfully <em>you</em>. I love everything you are, inside and out, including the very things you sometimes pick yourself apart over and dismiss as little imperfections. I wish you could borrow my eyes for a day, if only so you could understand what I mean when I tell you how beautiful you are. I wish you could see yourself without the harshness of your own criticism, without the little doubts that convince you there is something about you that needs to be fixed or changed. I wish you could look at yourself with even a fraction of the kindness you so freely extend to everyone else. Because you deserve to be seen with that same gentleness. You deserve to feel beautiful without having to earn it, and to be loved without feeling as though you must first become some better, more perfect version of yourself.</p>
+
+            <p>But you are so much more than a pretty face, and I hope you know that, too.</p>
+
+            <p>You are one of the most empathetic, intelligent, kind, and genuine people I have had the privilege of getting to know. You have this wonderfully magnetic energy that draws people in and makes them want to stay. There is a sincerity to you that I find increasingly rare, a warmth that makes people feel as though they can let their guard down, and a heart that continues to care even when caring is not the easiest option. You stand up for what you believe in, you remain true to yourself, and you have the courage to be authentic even when it would be simpler to blend in. I admire that about you more than I can properly explain. I admire your mind, your convictions, your compassion, and the way you can be both strong and gentle without either quality diminishing the other. I admire the person you are now, and I am equally excited about the person you are still becoming.</p>
+
+            <p>And I hope you never feel that you have to stop becoming. I hope you give yourself the room to make mistakes, to change your mind, to discover new things about yourself, and to grow into whoever it is you want to be. You don't have to have your entire life mapped out. You don't have to be the strongest person in the room, or the kindest, or the most put-together. You are allowed to have bad days. You are allowed to need help. You are allowed to be a work in progress, just as every single one of us is. None of those things make you any less worthy of the love, admiration, and happiness that I hope life brings you in abundance.I also hope I am there to love you through all of all. </p>
+
+            <div class="divider" aria-hidden="true">✿ ✧ ✿</div>
+
+            <p>And speaking of the future, I sincerely hope that this is only the beginning of our friendship.</p>
+
+            <p>The road ahead of us is long, and there is still so much of life we haven't experienced, so much we haven't learned, and so many memories we haven't made. There will be birthdays yet to celebrate, songs yet to scream at the top of our lungs, conversations that stretch far longer than they were supposed to, and undoubtedly a fair share of chaos to keep things interesting. There will be new versions of ourselves to meet, new challenges to face, and new chapters of our lives that we cannot possibly predict from where we stand today. And I hope, through all of it, that we get to keep growing alongside one another.</p>
+
+            <p>Friendship has been a rather sensitive subject for both of us this past year, and I don't think either of us needs to pretend otherwise. Sometimes, the people and things that matter most to us are also the things that make us the most apprehensive. It can be difficult to trust in something good when you've learned just how much things can change, or to look forward to the future when the past has given you reasons to hesitate. But our friendship gives me hope. It reminds me that there are still wonderful people to meet, that meaningful connections can come from the most unexpected places, and that even after difficult chapters, there is still so much good waiting to be experienced. I don't know exactly what the future holds for either of us, but I know that I am grateful to be walking through this part of it with you.</p>
+
+            <p>And I hope that, years from now, we can look back at this little website and laugh at how sentimental I was being, how I apparently couldn't write you a birthday card without turning it into a yearning soldier at war. I hope we will have accumulated countless more memories by then, enough that this letter will feel like a tiny snapshot of two people who had no idea just how much life they still had ahead of them. I hope we will have watched each other grow, celebrated each other's successes, helped each other through the difficult bits, and continued to find reasons to laugh even when life gets complicated. Most of all, I hope we will still be here, still choosing this friendship, still making room for one another in whatever lives we end up building.</p>
+
+            <p>I can't promise that life will always be kind to us, or that everything will work out exactly as we hope. But I can tell you that having you in my life has made this year better than I could have imagined, and that I am endlessly grateful for the chance to know you as I do. You have given me memories I will cherish for a very long time, and I hope I have been able to give you even a fraction of the happiness you have given me.</p>
+
+            <p>So, happy birthday, Bianca. I hope sixteen is kind to you. I hope it brings you the sort of happiness that catches you by surprise, the sort of love that makes you feel safe enough to be entirely yourself, and the sort of moments that remind you how wonderful it is to be alive and to be here, experiencing all of this. I hope you are surrounded by people who recognise your worth, who celebrate you without reservation, and who remind you of all the things you sometimes struggle to see in yourself. I hope you give yourself permission to take up space, to dream impossibly big, to make mistakes, to start again, and to enjoy the life you are building without feeling as though you must first prove that you deserve it.</p>
+
+            <p>Thank you for being you. Thank you for letting me know you, for letting me be your friend, and for making these last eight and a half months some of the most wonderful ones of my life. I don't think I will ever be able to fit everything I feel into a single letter, a single website, or even a thousand different ways of saying it. But I hope this comes close enough for you to understand what I mean.</p>
+
+            <p>So more than these words could ever properly convey...</p>
+
+            <p>I love <em>you</em>, Bianca.</p>
+
+            <p><strong>Happy 16th birthday ♡</strong></p>
+        </article>
+
+        <section class="ending-card">
+            <div class="big-heart" aria-hidden="true">♡</div>
+            <p>For you, Binker Bonkers.</p>
+            <p class="signoff">With so much love,and a headache from coding</p>
+            <p>✿ ✧ ✿</p>
+        </section>
+    </main>
+
+    <footer>Made with love, a little too much cheesy sentiment, and the internet. ♡</footer>
+</body>
+</html>
